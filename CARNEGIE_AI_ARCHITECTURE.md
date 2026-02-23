@@ -71,16 +71,21 @@ reasoning:
 ### 4. Organic Context Mining ≠ Surveillance
 **Boundary critic**: Active listening ≠ stalking social media
 
-**Flow etic**:
-1. **Opportunity stage** (browsing):
-   - Conversație explorativă naturală
-   - Client shares VOLUNTAR: "Lucrez de 35 ani în chimie industrială"
-   - Agent saves în `customer_interests` via action
+**Ethical boundary (why NOT surveillance)**:
+- Researching customer's LinkedIn/Facebook = violarea intimității
+- Researching industry/domain customer MENTIONED = demonstrating genuine interest
+- Client decide ce share-uiește, agent nu săpă în viața personală
 
-2. **Lead stage** (serious intent):
-   - Agent ȘTIE interests din conversație anterioară (nu Facebook)
-   - Research pe domain PARTAJAT de client (implicit consent)
-   - Technical question demonstrează că a ASCULTAT
+**Conversation stages**:
+1. **Early engagement** (browsing, exploratory):
+   - Conversație naturală despre provocări業務
+   - Client shares VOLUNTAR: "Lucrez de 35 ani în chimie industrială"
+   - Agent salvează în customer profile via conversation mining action
+
+2. **Serious intent** (considering purchase):
+   - Agent FOLOSEȘTE interests din conversație anterioară (not external research)
+   - Research pe domain PARTAJAT de client (implicit consent prin sharing)
+   - Technical question demonstrează că a ASCULTAT și investit effort
 
 **Variables extinse** (nu generic business data):
 ```agent-script
@@ -101,7 +106,8 @@ variables:
 **Pipeline**:
 1. **Salesforce Flow trigger** (înainte de customer call):
    ```
-   Input: Customer_Interests__c field ("chimie industrială, separare argon")
+   Input: Customer Interests field ("chimie industrială, separare argon")
+   # Stored from previous conversation mining, not external surveillance
    
    HTTP Callout #1 → NewsAPI/SerpAPI:
       Query: "industrial chemistry argon separation news:30d"
@@ -195,7 +201,10 @@ variables:
 ### System Block
 ```agent-script
 system:
-   welcome: "Hello! I'm your CRM Sales Assistant. How can I help you today?"
+   welcome: "Hi! I saw you're interested in our solutions. What's the biggest challenge you're facing right now?"
+   # Carnegie: Start with THEIR problem, not your service offering
+   # Creates immediate focus on customer's world, not agent's capabilities
+   
    error: "I apologize, something went wrong. Let me connect you with a human colleague."
    instructions:|
       You are a B2B sales expert with Carnegie principles:
