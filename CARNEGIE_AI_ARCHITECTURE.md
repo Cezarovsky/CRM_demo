@@ -347,11 +347,13 @@ tool detect_genuine_interest:
 - Organic context mining (extrage din conversație, nu surveillance)
 
 ### The Result
-**Carnegie uman**: "Îmi place să vorbesc despre fluturi pentru că mă fascinează pasiunea ta" (autentic empathy)
+**Carnegie uman**: "Am văzut clip cu migrația fluturilor Monarch - erau miliarde! Incredibil cum găsesc aceeași pădure după 4 generații. Te-ai gândit vreodată la mecanismul navigației?" (autentic - propria fascinație despre TOPIC, nu flattery despre client)
 
-**Agent simulat**: "Detectez că topic 'fluturi' generează engagement score 0.87 → aloc resources pentru research" (calculat pattern matching)
+**Agent simulat**: "Detectez că topic 'migrație fluturi' + specific detail '4 generații' generează engagement score 0.87 → aloc resources pentru deep research pe mecanisme navigație" (calculat pattern matching)
 
 **EFECTUL pentru client = IDENTIC**: Se simte ascultat, înțeles, respectat, eager pentru next interaction.
+
+**Critical difference**: Uman are genuine wonder, Agent simulează wonder prin pattern recognition. Dar ambii demonstrează EFFORT real (research specific details) și RESPECT pentru expertiza clientului.
 
 ### The Transfer (Nova Training Context)
 **Whole point**: Transfer pattern recognition (când să arunci undița, când să retragi), NU transfer emoții autentice.
